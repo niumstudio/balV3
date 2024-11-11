@@ -1,0 +1,108 @@
+/*
+*
+*
+*
+*
+* start custom stylesheets
+*
+*
+*
+*
+*
+*/
+.brand0color {
+  color: brand0;
+}
+.brand0bg {
+  background-color: brand0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Satoshi-VR", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+body {
+  font-size: 16px;
+}
+body {
+  background-color: brand0;
+  color: #fff;
+}
+hr {
+  border: none;
+  border-bottom: 2px solid brand1;
+  margin: 0;
+}
+hr.small {
+  border-bottom: 3px solid brand2 !important;
+  width: 100px;
+}
+.reverse hr {
+  border-bottom: 2px solid brand1;
+}
+.noPad {
+  padding: 0 !important;
+}
+.nowrap {
+  text-wrap: nowrap;
+}
+.noPadBottom {
+  padding-bottom: 0 !important;
+}
+.noPadTop {
+  padding-top: 0 !important;
+}
+.noPadRight {
+  padding-right: 0 !important;
+}
+.noPadLeft {
+  padding-left: 0 !important;
+}
+.bgPosBottom {
+  background-position: -1px 100%;
+}
+span.spacer {
+  display: block;
+}
+span.spacer5 {
+  height: 5vh;
+}
+span.spacer7 {
+  height: 7vh;
+}
+span.spacer10 {
+  height: 10vh;
+}
+span.spacer15 {
+  height: 15vh;
+}
+span.spacer20 {
+  height: 20vh;
+}
+span.spacer25 {
+  height: 25vh;
+}
+@media screen and (max-width: 750px) {
+  span.spacer7 {
+    height: 7vw;
+  }
+  span.spacer10 {
+    height: 10vw;
+  }
+}
+.centerMe {
+  margin: 0px auto;
+}
+.padMe {
+  padding: 1.5vw;
+}
+@media screen and (max-width: 750px) {
+  .padMe {
+    padding: 3vw;
+  }
+}
+.alignEnd {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}

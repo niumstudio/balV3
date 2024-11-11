@@ -1,0 +1,206 @@
+/*!
+*
+*
+*
+*
+* start custom stylesheets
+*
+*
+*
+*
+*
+*/
+
+
+// vars
+lightmode1 = rgba(239,237,230,1.0) //#EFEDE6
+lightmode2 = rgba(226,222,215,1.0) //#E2DED7
+lightmode3 = rgba(245,243,239,1.0) //#F5F3EF
+
+darkmode1 = rgba(56,62,71,1.0) //#383E47
+darkmode2 = rgba(49,55,62,1.0) //#31373E
+darkmode3 = rgba(63,71,80,1.0) //#3F4750
+
+darkGrey = rgba(56,62,71,1.0) //#383E47
+sand = rgba(230,210,191,1.0) //#E6D2BF
+sandDark = rgba(178,168,161,1.0) //#B2A8A1
+paleBlue = rgba(149,162,180,1.0) //#95A2B4
+lavender = rgba(182,177,244,1.0) //#B6B1F4
+red = rgba(212,76,78,1.0) //#D44C4E
+
+
+
+white = rgba(255,255,255,1.0)
+whiteAlp90 = rgba(255,255,255,0.9)
+whiteAlp75 = rgba(255,255,255,0.75)
+whiteAlp50 = rgba(255,255,255,0.5)
+whiteAlp25 = rgba(255,255,255,0.25)
+whiteAlp15 = rgba(255,255,255,0.15)
+whiteAlp10 = rgba(255,255,255,0.1)
+whiteAlp07 = rgba(255,255,255,0.07)
+whiteAlp04 = rgba(255,255,255,0.04)
+
+black = rgba(0,0,0,1.0)
+blackAlp90 = rgba(0,0,0,0.90)
+blackAlp75 = rgba(0,0,0,0.75)
+blackAlp65 = rgba(0,0,0,0.65)
+blackAlp55 = rgba(0,0,0,0.55)
+blackAlp50 = rgba(0,0,0,0.5)
+blackAlp25 = rgba(0,0,0,0.25)
+blackAlp10 = rgba(0,0,0,0.1)
+blackAlp5 = rgba(0,0,0,0.05)
+
+.brand0color
+    color: brand0
+
+.whitebgAlp04
+    background-color: whiteAlp04
+.blackbgAlp25
+    background-color: blackAlp25
+.darkmode2bg25
+    background-color: rgba(49,55,62,0.25)
+.darkmode2bg50
+    background-color: rgba(49,55,62,0.50)
+.gradientCTA
+    background: linear-gradient(to right, #B6B1F4, #EAAA7E) 
+
+
+
+
+
+
+padXL = 7vw
+padL = 5vw
+padM = 3vw
+padStd = 1.8vw
+padXS = 1.5vw
+padXXS = 0.8vw
+
+marXL = 11vw
+marL = 5vw
+marM = 3vw
+marStd = 1.8vw
+marXS = 1.5vw
+marXXS = 0.8vw
+
+
+
+fontStack = "Satoshi-VR", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+//responsive breakpoint & media queries
+mBreakPoint = 750px
+tBreakPoint = 1100px
+sdBreakPoint = 1200px
+dBreakPoint = 1500px
+lgBreakPoint = 2100px
+
+phoneRule = "screen and (max-width: mBreakPoint )"
+tabletRule = "screen and (min-width: mBreakPoint) and (max-width: tBreakPoint )"
+desktopRule = "screen and (min-width: tBreakPoint) and (max-width: dBreakPoint )"
+lgdesktopRule = "screen and (min-width: lgBreakPoint)"
+
+smallDesktop = "screen and (min-width: mBreakPoint) and (max-width: sdBreakPoint )"
+
+
+mtrigger = "screen and (max-width: tBreakPoint )"
+ttrigger = "screen and (min-width: mBreakPoint )"
+dtrigger = "screen and (min-width: tBreakPoint )"
+
+phLandscape = "screen and (max-width: mBreakPoint) and (orientation: landscape)"
+tbLandscape = "screen and (min-width: mBreakPoint) and (max-width: tBreakPoint) and (orientation: landscape)"
+
+ie = "all and (-ms-high-contrast: none), (-ms-high-contrast: active)"
+
+$hideItAll = none !important
+
+// responsive logos
+logoDimens = 40vw
+
+
+// misc blocks
+marginNo = @block {
+    margin: 0
+}
+marginM = @block {
+    margin-bottom: 2vh
+}
+marginL = @block {
+    margin-left: 2vw
+}
+marginR = @block {
+    margin-right: 2vw
+}
+marginT = @block {
+    margin-bottom: 4vh
+}
+marginBT = @block {
+    margin-bottom: 1.5vh
+}
+marginVT = @block {
+    margin-top: 2vh
+    margin-bottom: 2vh
+}
+marginALL = @block {
+    margin: 2vh
+}
+wh100 = @block {
+    width:100%
+    height:100%
+}
+test = @block {
+    border:1px solid cyan
+}
+borderBtm = @block {
+    border-bottom: 1px solid brand1
+}
+
+
+
+// heights
+fullH = 100vh
+largeH = 85vh
+halfH = 50vh
+smallH = 25vh
+
+navHeight = 8vh
+navHeightL = 11vh
+navSpacer = 10vh
+navSpacerL = 15vh
+
+
+
+// basic defaults
+html, body
+    width: 100%
+    height: 100%
+    font-family: fontStack
+body
+    font-size: 16px
+    // background: linear-gradient(top, white, brand1)
+body
+    background-color: darkmode1
+    background-image: url(/images/bgs/darkTile.webp)
+    color: white
+
+
+hr
+    border: none
+    border-bottom: 2px solid brand1
+    margin:0
+
+.noPad
+    padding: 0 !important
+
+.nowrap 
+    text-wrap: nowrap
+
+.noPadBottom
+    padding-bottom: 0 !important
+.noPadTop
+    padding-top: 0 !important
+.noPadRight
+    padding-right: 0 !important
+.noPadLeft
+    padding-left: 0 !important
+
+

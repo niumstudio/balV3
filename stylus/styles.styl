@@ -1,0 +1,51 @@
+/*!
+* generated using stylus - don't alter
+*/
+
+// libs and default 3rd party
+@import 'nib'
+// setup
+@import '../fonts/satoshi/satoshiCustom.css'
+
+@require 'defaults.styl'
+// block, nav etc
+@require 'layout.styl'
+// custom elements, icons
+@require 'elements.styl'
+// typography, links
+@require 'typo.styl'
+
+
+
+
+
+
+/* effects */
+.multiply
+    background-blend-mode: multiply
+.softlight
+    background-blend-mode: soft-light
+.burnColor
+    background-blend-mode: color-burn
+
+
+.gradient3
+    background-blend-mode: multiply
+    background: radial-gradient(circle at center, blackAlp5,blackAlp5,blackAlp5,blackAlp10, blackAlp25 )
+    @media phoneRule
+        background: brand0
+
+
+.blur
+    filter:blur(10px)
+
+
+
+// last in the cascade - highest prio
+.m
+    @media screen and (min-width: tBreakPoint)
+        display: $hideItAll
+.d
+    @media screen and (max-width: tBreakPoint)
+        display: $hideItAll
+

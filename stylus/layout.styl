@@ -1,0 +1,261 @@
+//core layout
+body footer
+    //border-top: 1px solid blackAlp50
+@media ttrigger  
+    body > header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width:100%
+    body > header > *
+        padding-left: padM
+        padding-right: padM
+
+    body > header.fixed
+        min-height: navHeightL
+        position: absolute
+        z-index: 20000
+    
+    body > header.sticky
+        min-height: navHeight
+        position: fixed
+        z-index: 20000
+        display: none
+        background-color: blackAlp50
+
+    body > footer
+        color: white
+        background: blackAlp25
+        text-align: center
+        padding:  padXL marXL padXL marXL
+
+
+
+
+.picturefill-background
+    overflow hidden
+    background-size: cover
+    background-position: 50% 50%
+.picturefill-background.containMob
+    @media mtrigger
+        background-size: contain
+        background-position: 50% 0
+        
+
+
+
+
+.positionSliderBG
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 0
+
+
+
+.container 
+    position: relative
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// content
+*.fullH
+    min-height: fullH
+    @media mtrigger
+        min-height: fullH - navHeight
+*.largeH
+    min-height: largeH
+*.halfH
+    min-height: halfH
+*.smallH
+    min-height: smallH  
+.largeH div.content > section > div
+    padding-top: padXL*0.5
+    padding-bottom: padXL*0.5
+.halfH div.content > section > div
+    padding-top: padXL*0.3
+    padding-bottom: padXL*0.3
+.smallH div.content > section > div
+    padding-top: padXL*0.2
+    padding-bottom: padXL*0.2
+
+
+
+
+
+// layout mods
+@media dtrigger    
+    .rC    
+        justify-content: center
+    .rE    
+        justify-content: flex-end    
+    .cC    
+        align-items: center 
+    .cE    
+        align-items: flex-end        
+    .tC
+        text-align: center
+    .tR
+        text-align: right   
+
+
+
+
+
+
+
+
+
+
+
+// mobile nav
+.navHeight
+    height: navSpacer
+    @media tabletRule
+        height: navHeight
+
+#navMobile
+    position: fixed
+    bottom: marStd
+    right: marStd
+    z-index: 6000
+    display: none
+#navHeader
+    position: fixed
+    z-index: 7000
+    background-color: blackAlp50
+    //border-bottom:1px solid halfDark
+    width:100vw
+    padding-left: padM*2
+    padding-right: padM 
+    display: flex
+    align-items: center
+    justify-content: space-between
+#navHeader div#mblNavControl
+    display: flex 
+#navHeader div#mblNavControl a
+    margin-left: marXS    
+div.mblnav
+    display: none;
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 6001
+    background-color: white
+div.mblnavContainer
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    /* The main point: */
+    overflow-y: auto
+    /* Optional but highly reccomended: enables momentum scrolling on iOS */
+    -webkit-overflow-scrolling: touch
+    background-color: brand0
+.open
+    opacity: 1 !important
+div.containMNav
+    padding: padXL padXL
+div.containMNav > *
+    margin-bottom: marXL
+div.containMNav nav
+    display: flex
+    flex-direction: column
+div.containMNav nav a
+    padding: padM*1.5 padM 
+    line-height: 130%
+    margin: 1px 0
+    border-bottom: 2px solid brand5
+    @media tabletRule
+        padding: padM
+div.containMNav a:link,
+div.containMNav a:visited
+    color: brand5 !important
+div.containMNav h6
+    font-size: 1em
+    margin-top: marStd
+    margin-bottom: marL
+@media mtrigger
+    html.noscroll 
+        overflow: hidden 
+    body.noscroll
+        overflow: visible
+        height: 100%
+
+
+
+
+
+
+
+.centred 
+    display: flex
+    justify-content: center
+    align-items: center
+
+div.insetContent
+    text-align: center
+    text-wrap: balance
+    background-repeat: no-repeat
+    background-size:auto 85%
+    background-position: 50% 50%
+    padding: padXXS
+    @media dtrigger
+        width 50vw
+
+div.slickSliderContent div.insetContent
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    @media dtrigger
+        min-height: 50vh
+
+
+// mobile
+@media mtrigger
+    div.insetContent        
+        padding: padXL*2 marXL padXL*2 marXL
+
+// large desktop
+@media lgdesktopRule
+    main > div:not(.base) div.innerContent
+        max-width: 2000px
+        margin: 0px auto
