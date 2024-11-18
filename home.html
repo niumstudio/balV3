@@ -40,7 +40,7 @@
 
 
     <div id="navMobile">
-        <a href="#home" id="toTop" class="icon"><i class="icon-ctrl"></i></a>
+        <a href="#home" id="toTop" class="icon"><i class="icon-chevron-up"></i></a>
     </div>
 
 
@@ -53,7 +53,7 @@
 
         <div id="mblNavControl">
             <a href="#" id="navTrigger" class="icon"><i class="icon-menu"></i></a>
-            <a href="#" id="navClose" class="icon"><i class="icon-cross"></i></a>
+            <a href="#" id="navClose" class="icon"><i class="icon-x"></i></a>
         </div>
     </div>
 
@@ -62,10 +62,10 @@
             <div class="navHeight">&nbsp;</div>
                 <div class="containMNav">
                     <nav>
-                       <a href="#1" class="inpageNav">Why V3?</a>
-                       <a href="#2" class="inpageNav">Core Concepts</a>
-                       <a href="#3" class="inpageNav">Compare V3</a>
-                       <a href="#4" class="inpageNav">Getting Started</a>
+                       <a href="#s1" class="inpageNav">Why V3?</a>
+                       <a href="#s2" class="inpageNav">Core Concepts</a>
+                       <a href="#s3" class="inpageNav">Compare V3</a>
+                       <a href="#s4" class="inpageNav">Getting Started</a>
                        <a href="[demo]" class="ctaButton">Try a demo</a>
                        <a href="https://balancer.fi">balancer.fi</a>
                     </nav>
@@ -88,10 +88,10 @@
         </a>
         
         <nav>
-            <a href="#1">Why V3?</a>
-            <a href="#2">Core Concepts</a>
-            <a href="#3">Compare V3</a>
-            <a href="#4">Getting Started</a>
+            <a href="#s1">Why V3?</a>
+            <a href="#s2">Core Concepts</a>
+            <a href="#s3">Compare V3</a>
+            <a href="#s4">Getting Started</a>
             <a href="[demo]" class="ctaButton">V3 Docs</a>
             <a href="https://balancer.fi">balancer.fi</a>
         </nav> 
@@ -106,10 +106,10 @@
         </a>
         
         <nav>
-            <a href="#1">Why V3?</a>
-            <a href="#2">Core Concepts</a>
-            <a href="#3">Compare V3</a>
-            <a href="#4">Getting Started</a>
+            <a href="#s1">Why V3?</a>
+            <a href="#s2">Core Concepts</a>
+            <a href="#s3">Compare V3</a>
+            <a href="#s4">Getting Started</a>
             <a href="[demo]" class="ctaButton">V3 Docs</a>
             <a href="https://balancer.fi">balancer.fi</a>
         </nav> 
@@ -130,9 +130,15 @@
     <main>
 
 
-       
-        
-        
+
+        <div id="inpageNav"></div>
+
+
+
+        <div class="positionSliderBG picturefill-background fullH vault" style="mix-blend-mode: multiply;z-index: 0;opacity: 0.0;">
+            <div>&nbsp;</div>
+            <span data-src="/images/misc/vault.webp" data-media="(min-width: 1100px)"></span> 
+        </div>
 
 
 
@@ -146,11 +152,11 @@
                 </div> 
                 <div class="container picturefill-background fullH" >
                     <div>&nbsp;</div>
-                    <span data-src="/images/bgs/zenbg-2@2x.webp" data-media="(min-width: 1100px)"></span> 
+                    <span data-src="/images/bgs/zenbg-4@2x.webp" data-media="(min-width: 1100px)"></span> 
                 </div> 
                 <div class="container picturefill-background fullH" >
                     <div>&nbsp;</div>
-                    <span data-src="/images/bgs/zenbg-4@2x.webp" data-media="(min-width: 1100px)"></span> 
+                    <span data-src="/images/bgs/zenbg-2@2x.webp" data-media="(min-width: 1100px)"></span> 
                 </div> 
                 <div class="container picturefill-background fullH" >
                     <div>&nbsp;</div>
@@ -162,22 +168,12 @@
 
 
 
-
         
-
-        <!-- static rings 
-        <div class="positionSliderBG"  style="opacity: 0.15;">
-            <div class="container picturefill-background fullH" >
-                <span data-src="/images/bgs/zenMid@2x.webp" data-media="(min-width: 1100px)"></span> 
-            </div>
-        </div>-->
         
         
 
 
-
-
-        <div class="sec1">
+        <div id="start">
 
             
             <div class="slickSliderContent">
@@ -194,7 +190,7 @@
                     <div class="fullH centred">
                         <div class="insetContent" style="background-image:url(/images/zen-Circle@2x.webp);">
                             <h1>AMMs made easy</h1>
-                            <h5>Simplified pool creation with an optimized vault. <strong>Balancer V3 powers the next generation of AMM innovation.</strong></h5>
+                            <h5 class="sand">Simplified pool creation with an optimized vault. <strong>Balancer V3 powers the next generation of AMM innovation.</strong></h5>
                         </div>       
                     </div> 
                 </div>
@@ -202,7 +198,7 @@
                     <div class="fullH centred">
                         <div class="insetContent" style="background-image:url(/images/zen-peace@2x.webp);">
                             <h1>Find your zen</h1>
-                            <h5>V3 removes complexity from the creation of new AMMs, simplifying the developer experience.</h5>
+                            <h5 class="sand">V3 removes complexity from the creation of new AMMs, simplifying the developer experience.</h5>
                         </div>       
                     </div> 
                 </div>
@@ -210,7 +206,7 @@
                     <div class="fullH centred">
                         <div class="insetContent" style="background-image:url(/images/zen-power@2x.webp);">
                             <h1>Flex your way</h1>
-                            <h5>Extend pool types throughout the pool's lifecycle to unlock an infinite design space with <strong>Custom Hooks</strong></h5>
+                            <h5 class="sand">Extend pool types throughout the pool's lifecycle to unlock an infinite design space with <strong>Custom Hooks</strong></h5>
                         </div>       
                     </div> 
                 </div>
@@ -225,7 +221,7 @@
                                 <br>
                                 <br>
                                 <br>
-                                <h5>Or learn more about V3 below...</h5>
+                                <h5 class="sand">Or learn more about V3 below...</h5>
                             </div>
                             
                             
@@ -235,11 +231,298 @@
                 </div>
             </div>
             
-                
 
+        </div>
+
+
+
+
+
+
+
+
+        <div class="filled largeH" id="s1">
+            <div class="outerWrapper">
+                
+                <div class="innerContent centred">
+                    <div class="insetContent inview">
+                        <h2>Why V3?</h2>
+                        <p>Balancer V3 delivers a fundamental shift forward in AMM technology.
+                            Gathering learnings from partner projects, developers, users and
+                            our own internal teams- V3 consolidates core functions, re-engineers
+                            and builds on previous innovations, setting the scene for future
+                            development with a CODE LESS BUILD MORE mantra.</p>
+                    </div> 
+                </div>
+
+
+                <!-- boosted pools stone-->
+                <span class="positionObj1 mixOverlay ">
+                    <span class="sandBgElement">
+                        <img src="/images/misc/swirl1@2x.webp" class="swirl button-shake">
+                        <img src="/images/misc/stone1@2x.webp" class="stone1">
+                    </span>
+                </span>
+                <span class="positionObj1 ">
+                    <span class="sandBgElement">
+                        <img src="/images/misc/infog-boosted-light.webp" class="infog">
+                    </span>
+                </span>
+                
+                <!-- custom hooks stone-->
+                <span class="positionObj2 mixOverlay">
+                    <span class="sandBgElement">
+                        <img src="/images/misc/swirl2@2x.webp" class="swirl button-shake">
+                        <img src="/images/misc/stone1@2x.webp" class="stone1">
+                    </span>
+                </span>
+                <span class="positionObj2">
+                    <span class="sandBgElement">
+                        <img src="/images/misc/infog-lvr-mitigation-light.webp" class="infog">
+                    </span>
+                </span>
+
+                <!-- LVR mitigation stone-->
+                <span class="positionObj3 mixOverlay">
+                    <span class="sandBgElement">
+                        <img src="/images/misc/swirl3@2x.webp" class="swirl button-shake">
+                        <img src="/images/misc/stone1@2x.webp" class="stone1 ">
+                    </span>
+                </span>
+                <span class="positionObj3">
+                    <span class="sandBgElement">
+                        <img src="/images/misc//infog-hooks-light.webp" class="infog">
+                    </span>
+                </span>
+
+            </div>
+        </div>
+
+
+
+      
+
+        <div class="filled">
+            <div class="outerWrapper noPadTop">
+                
+                <div class="innerContent ">
+                    <h3 class="centerMe">New in Balancer V3</h3>
+                    <br>
+                    <br>
+                    <br>
+                    
+                    <div class="simpleGrid30">
+                        <div class="panel">
+                            <h4>100% Boosted Pools</h4>
+                            <p>Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et. Ipsum quis elit irure Lorem voluptate quis cupidatat minim esse. Reprehenderit sint id aliqua occaecat fugiat labore excepteur commodo nulla nulla pariatur ad commodo deserunt.</p>
+                        </div>
+                        <div class="panel">
+                            <h4>Custom Pools &amp; Hooks</h4>
+                            <p>Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et. Ipsum quis elit irure Lorem voluptate quis cupidatat minim esse.</p>
+                            <p>Ipsum quis elit irure Lorem voluptate quis cupidatat minim esse.</p>
+                        </div>
+                        <div class="panel">
+                            <h4>LVR Mitigation</h4>
+                            <p>Reprehenderit sint id aliqua occaecat fugiat labore excepteur commodo nulla nulla pariatur ad commodo deserunt.</p>
+                            <p>Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et. Ipsum quis elit irure Lorem voluptate quis cupidatat minim esse.</p>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="slider"> 
+                        <div class="centerMe">
+                            <br>
+                            <a href="#" class="minorCTA centerMe slideOutTrigger"><span>View More V3 Features</span>&nbsp;<i class="icon-chevron-down"></i></a><br>
+                            <br>
+                        </div>
+
+                        <div class="simpleGrid30 slideOutDrawer">
+                            <div class="panel compact">
+                                <h6>Sub-feature title</h6>
+                                <p>Minor copy. Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et.</p>
+                            </div>
+                            <div class="panel compact">
+                                <h6>Sub-feature title</h6>
+                                <p>Minor copy. Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et.</p>
+                            </div>
+                            <div class="panel compact">
+                                <h6>Sub-feature title</h6>
+                                <p>Minor copy. Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et.</p>
+                            </div>
+                            <div class="panel compact">
+                                <h6>Sub-feature title</h6>
+                                <p>Minor copy. Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et.</p>
+                            </div>
+                            <div class="panel compact">
+                                <h6>Sub-feature title</h6>
+                                <p>Minor copy. Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et.</p>
+                            </div>
+                            <div class="panel compact">
+                                <h6>Sub-feature title</h6>
+                                <p>Minor copy. Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et.</p>
+                            </div>
+                            <div class="panel compact">
+                                <h6>Sub-feature title</h6>
+                                <p>Minor copy. Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et.</p>
+                            </div>
+                            <div class="panel compact">
+                                <h6>Sub-feature title</h6>
+                                <p>Minor copy. Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et.</p>
+                            </div>
+                            <div class="panel compact">
+                                <h6>Sub-feature title</h6>
+                                <p>Minor copy. Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                   
+                    
+
+                </div>
+
+               
+
+            </div>
+
+        </div>
+
+
+
+        
+        
+
+
+
+
+        <div class="fullH alignCenter">
+            
+
+            <div class="outerWrapper">
+               
+
+                <div class="innerContent centred">
+                    <div class="insetContent vaultTrigger">
+                     
+
+                        <h3>Building on Balancer has never been easier...</h3>
+                        <p>The V3 Vault has been redesigned to ...  reprehenderit aliqua esse velit velit aliqua eiusmod quis et. And <strong>audited by the best-</strong> [name], [name] amd [name.].</p>
+                        <h3>...and more robust.</h3>
+                        <br>
+                        <a href="/" class="ctaButton">Learn more about the V3 Vault</a>
+                    </div> 
+                </div>
+
+            </div>
 
             
 
+        </div>
+
+
+
+
+
+
+
+
+            <div class="filled" id="s2">
+                <div class="outerWrapper">
+                    
+                    <div class="innerContent centred">
+                        <div class="insetContent vaultTrigger">
+                            <h2>The V3 System Design</h2>
+                            <p>eprehenderit aliqua esse velit velit aliqua eiusmod quis et</p>
+                        </div> 
+                    </div>
+
+                    <div class="innerContent">
+                            the diagram
+                    </div>
+    
+                </div>
+            </div>
+
+            <div class="filled">
+                <div class="outerWrapper">
+                        
+                    <div class="innerContent ">
+                            <section>
+                                <h1>Title<br>eiusmod est velit temp</h1>
+                                <h2>SubTitle<br>eiusmod est velit temp</h2>
+                                <h3>Heading1<br>eiusmod est velit temp</h3>
+                                <h4>Heading2<br>eiusmod est velit temp</h4>
+                                
+                            </section> 
+                            <section>
+                                
+                                <h5>Minor1 <br>eiusmod est velit temp</h5>
+                                <h6>Minor2 <br>eiusmod est velit temp</h6>
+                                <p>Voluptate eiusmod est velit tempor. Magna occaecat minim commodo pariatur sint. Do occaecat officia quis tempor aliquip officia in tempor in consequat. Ipsum voluptate sint mollit aliquip. Esse ullamco cupidatat incididunt nisi et adipisicing pariatur ad culpa. Nulla ullamco tempor voluptate adipisicing et voluptate occaecat aute officia qui aliqua eu qui.</p>
+                            </section> 
+        
+                    </div>
+        
+                </div>
+           
+
+
+        <style>
+            /* Animation */
+            .waves {
+                position:relative;
+                width: 100%;
+                height:15vh;
+                margin-bottom:-7px; /*Fix for safari gap*/
+                min-height:100px;
+                max-height:150px;
+                }
+                .parallax > use {
+                animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+                }
+                .parallax > use:nth-child(1) {
+                animation-delay: -2s;
+                animation-duration: 15s;
+                }
+                .parallax > use:nth-child(2) {
+                animation-delay: -2s;
+                animation-duration: 20s;
+                }
+                .parallax > use:nth-child(3) {
+                animation-delay: -4s;
+                animation-duration: 13s;
+                }
+                .parallax > use:nth-child(4) {
+                animation-delay: -5s;
+                animation-duration: 20s;
+                }
+                @keyframes move-forever {
+                0% {
+                transform: translate3d(-90px,0,0);
+                }
+                100% { 
+                    transform: translate3d(85px,0,0);
+                }
+                }
+        </style>
+
+
+            <div style=" clip-path: rect(0px 100% 15vh 0px);overflow: hidden;">
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.02" />
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.02" />
+                </g>
+                </svg>
+            </div>
+
+
 
         </div>
 
@@ -248,93 +531,39 @@
 
 
 
+
+
+
+        <div class="filled">
+            <div class="outerWrapper whitebgAlp04">
+                
+                <div class="innerContent">
+                    <section>
+                        <h4>Column one</h4>
+                    </section> 
+                    <section>
+                        <h4>Column two</h4>
+                    </section> 
+                    <section>
+                        <h4>Column three</h4>
+                    </section> 
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+        
 
        
-        <div id="inpageNav"></div>
 
-
-
-
-
-
-
-
-
-
-
-        <div>
-
-            <div class="container fullH">
-                <div class="contentHold gradient1">
-                <div class="insetContent2">
-                <div class="innerContent reverse">
-                    <section class="vw45 ">
-                    
-                    </section>
-                </div>
-
-               
-                </div>
-                </div>      
-    
-            </div>
-    
-        </div>
-
-
-
-
-
-
-
-
-
-        <div class="whitebgAlp04 fullH">
-
-            <div class="container">
-                <div class="contentHold gradient1">
-                <div class="insetContent2">
-                <div class="innerContent reverse">
-                    <section class="vw45">
-                        intro "Why V3?" fluffy content above -  all Pon stuff from here.
-                    </section>
-                </div>
-
-               
-                </div>
-                </div>      
-    
-            </div>
-    
-        </div>
-    
-    
 
         
-
-        
-        <div class="whitebgAlp04 fullH">
-
-            <div class="container">
-                <div class="contentHold gradient1">
-                <div class="insetContent2">
-                <div class="innerContent reverse">
-                    <section class="vw45">
-                  Lighten as scroll down to light mode ... <br>
-                  <br>
-                  <h4>Zenergy</h4><br>
-                  Have a brand seperator for "We brought the Zen. You bring the Energy" and then the Bal grants content to finish.
-                    </section>
-                </div>
-
-               
-                </div>
-                </div>      
-    
-            </div>
-    
-        </div>
-
 
 
         
@@ -376,48 +605,11 @@
     <script type="text/javascript" src="/js/jquery.scrollTo-2.1.0/jquery.scrollTo.min.js"></script>
     <script type="text/javascript" src="/js/jquery.localScroll-1.4.0/jquery.localScroll.min.js"></script>
     <script type="text/javascript" src="/js/easing.js"></script>
-    <script type="text/javascript" src="/js/site.js"></script>
     <script type="text/javascript" src="/js/fslightbox.js"></script>
-    <script type="text/javascript" src="/js/ukiyo.min.js"></script>
-    
-    <script>
-        new Ukiyo(".ukiyo",{
-            //scale: 1.2, // 1~2 is recommended
-            //speed: 1.75 // 1~2 is recommended
-        })
-    </script>
-    
-    <script type="text/javascript">   
-        if (navigator.userAgent.match("Chrome")) 
-            {
-                document.getElementsByTagName("BODY")[0].className += " chrome";
-            } else {
-                document.getElementsByTagName("BODY")[0].className += " notchrome";
-            }
-    </script>
+    <script type="text/javascript" src="/js/site.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.slickSliderBG').slick({
-                fade: true,
-                pauseOnHover: false,
-                autoplay: true,
-                autoplaySpeed:2000,  
-                speed: 4000,      
-                dots: false,
-                arrows: false
-            });
-            $('.slickSliderContent').slick({
-                fade: true,
-                pauseOnHover: false,
-                autoplay: true,
-                autoplaySpeed:6000,  
-                speed: 1000,      
-                dots: true,
-                arrows: false
-            });
-        });
-    </script>
+    
+
 
 
 
