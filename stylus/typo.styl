@@ -24,7 +24,7 @@ nav > *
     padding: padXXS padXXS
     transition: 0.5s
     @media dtrigger
-        font-size:1.1em
+        font-size:1em
 
 h1, h2, h3, h4, h5, h6
     color: paleBlue
@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6
 
 .sand, p
     color: sand
-.white
+.white, .active
     color: white
 
 // defaults   
@@ -72,7 +72,7 @@ h6
 
 p, li
     font-weight: 400
-    font-size: 1.2em
+    font-size: 1.1em
     line-height: 140%
 
 
@@ -94,3 +94,37 @@ p, li
 .fw-800
     font-weight: 800
 
+
+a.tabLink 
+    text-decoration: none
+a.tabLink > *
+    display:flex
+    justify-content: space-between
+    border-bottom: 1px solid paleBlue
+    padding: 0.5em 0
+    margin-bottom: 0
+a.tabLink > *.active
+    border-bottom: none
+    padding-bottom: 0
+a.tabLink i
+    font-size: 90%
+    color: paleBlue
+
+
+ul.linedItems
+    margin: 0
+    padding: 0
+    list-style-type: none
+
+ul.linedItems li
+    display: block
+    text-align: center
+    padding: 1em
+    border-bottom: 1px solid sandDark
+ul.linedItems li:last-child
+    border-bottom:none
+
+
+.panel p
+    margin: 0
+    margin-bottom: marXXS

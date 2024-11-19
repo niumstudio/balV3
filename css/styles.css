@@ -168,7 +168,6 @@ hr {
   }
   body > footer {
     color: #fff;
-    background: rgba(0,0,0,0.25);
     text-align: center;
     padding: 7vw 11vw 7vw 11vw;
   }
@@ -340,6 +339,47 @@ div.outerWrapper {
     padding: 14vw 7vw;
   }
 }
+div.outerWrapper.wider {
+  padding-left: 7vw;
+  padding-right: 7vw;
+}
+@media screen and (min-width: 1100px) {
+  div.innerContent.cols {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-lines: single;
+    -moz-box-lines: single;
+    -o-box-lines: single;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-column-gap: 3vw;
+    -moz-column-gap: 3vw;
+    column-gap: 3vw;
+  }
+}
+@media screen and (min-width: 1100px) {
+  div.innerContent.cols.compact {
+    -webkit-column-gap: 0.8vw;
+    -moz-column-gap: 0.8vw;
+    column-gap: 0.8vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  div.innerContent.cols > section {
+    margin-bottom: 10vh;
+  }
+}
+@media screen and (min-width: 1100px) {
+  div.innerContent.cols > section {
+    -webkit-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+    -ms-flex: 1 1 50%;
+    flex: 1 1 50%;
+  }
+}
 @media screen and (min-width: 2000px) {
   div.outerWrapper {
     padding: 7vw 14vw;
@@ -359,6 +399,12 @@ div.outerWrapper {
   .positionSliderBG {
     height: 92%;
   }
+}
+.positionSliderBG2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 .container {
   position: relative;
@@ -387,7 +433,7 @@ div.insetContent {
 }
 @media screen and (min-width: 1100px) {
   div.insetContent {
-    width: 50vw;
+    width: 40vw;
   }
 }
 div.slickSliderContent div.insetContent {
@@ -525,7 +571,7 @@ a.ctaButton:hover {
 }
 a.minorCTA {
   font-size: 1.2em;
-  padding: 0.8vw 1.2vw;
+  padding: 0.8vw 0;
   display: inline-block;
   text-decoration: none;
   -webkit-transition: 0.5s;
@@ -593,13 +639,13 @@ ul.vanilla li {
   display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
-  grid-column-gap: 1em;
-  grid-row-gap: 1em;
+  grid-column-gap: 1.5vw;
+  grid-row-gap: 1.5vw;
 }
 .simpleGrid2 {
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15%, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(15%, 1fr));
   grid-column-gap: 1em;
   grid-row-gap: 1em;
 }
@@ -636,44 +682,33 @@ ul.vanilla li {
     display: block;
   }
 }
-div.panel {
+.panel,
+.panelled {
   padding: 3vw;
   background-color: rgba(0,0,0,0.25);
   border-radius: 8px;
 }
 @media screen and (max-width: 750px) {
-  div.panel {
+  .panel,
+  .panelled {
     margin-bottom: 1em;
     padding: 5vw;
   }
 }
-div.panel.compact {
+.panel.rev,
+.panelled.rev {
   background-color: rgba(255,255,255,0.04);
+}
+.panel.compact {
   padding: 1.5vw 3vw 0.8vw 3vw;
 }
-div.panel.noBG {
+.panel.noBG,
+.panelled.noBG {
   background: none;
 }
-.panel .thumb {
-  height: 5vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: box;
-  display: flex;
-  -webkit-box-align: center;
-  -o-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 1.5vw;
-  margin: 1.5vw;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-@media screen and (max-width: 750px) {
-  .panel .thumb {
-    height: 15vw;
-  }
+.panel.centered,
+.panelled.centered {
+  text-align: center;
 }
 .panel .thumb.larger {
   height: 15vw;
@@ -796,8 +831,8 @@ span.sandBgElement img.swirl {
   opacity: 0.1;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
   filter: alpha(opacity=10);
-  left: 30vw;
-  bottom: -10vh;
+  left: 35vw;
+  top: 52vh;
 }
 .sandBgElement img.stone1 {
   width: 60%;
@@ -815,6 +850,123 @@ span.sandBgElement img.swirl {
 .button-shake {
   -webkit-animation: button-shake 10s infinite ease-in;
   animation: button-shake 10s infinite ease-in;
+}
+.orbit {
+  -webkit-animation: orbit 30s infinite linear;
+  animation: orbit 30s infinite linear;
+}
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px;
+/*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+/* video thumbs */
+}
+.waves .parallax > use {
+  -webkit-animation: move-forever 20s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+  animation: move-forever 20s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.waves .parallax > use:nth-child(1) {
+  -webkit-animation-delay: -2s;
+  animation-delay: -2s;
+  -webkit-animation-duration: 15s;
+  animation-duration: 15s;
+}
+.waves .parallax > use:nth-child(2) {
+  -webkit-animation-delay: -2s;
+  animation-delay: -2s;
+  -webkit-animation-duration: 20s;
+  animation-duration: 20s;
+}
+.waves .parallax > use:nth-child(3) {
+  -webkit-animation-delay: -4s;
+  animation-delay: -4s;
+  -webkit-animation-duration: 13s;
+  animation-duration: 13s;
+}
+.waves .parallax > use:nth-child(4) {
+  -webkit-animation-delay: -5s;
+  animation-delay: -5s;
+  -webkit-animation-duration: 20s;
+  animation-duration: 20s;
+}
+@-webkit-keyframes move-forever {
+  0% {
+    -webkit-transform: translate3d(-90px, 0, 0);
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(85px, 0, 0);
+    transform: translate3d(85px, 0, 0);
+  }
+}
+@keyframes move-forever {
+  0% {
+    -webkit-transform: translate3d(-90px, 0, 0);
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(85px, 0, 0);
+    transform: translate3d(85px, 0, 0);
+  }
+}
+a.itemLink:link,
+a.itemLink:visited {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #b2a8a1;
+  display: block;
+  text-decoration: none;
+}
+a.itemLink:hover > * {
+  color: #e6d2bf;
+}
+@media (pointer: fine) {
+  a.itemLink:hover {
+    -webkit-transform: scale(102%);
+    transform: scale(102%);
+  }
+}
+a.itemLink span.thumbVid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 18vw;
+  border-radius: 8px;
+}
+@media screen and (max-width: 750px) {
+  a.itemLink span.thumbVid {
+    height: 50vw;
+    margin-bottom: 5vw;
+  }
+}
+@media screen and (min-width: 750px) and (max-width: 1100px) {
+  a.itemLink span.thumbVid {
+    height: 25vw;
+    margin-bottom: 3vw;
+  }
+}
+a.itemLink span i {
+  font-size: 4em;
+  color: #b2a8a1;
+  -webkit-align-self: center;
+  -ms-grid-row-align: center;
+      align-self: center;
+  -ms-flex-item-align: center;
+}
+a.itemLink:hover span i {
+  color: #e6d2bf;
 }
 @-webkit-keyframes button-shake {
   0% {
@@ -842,6 +994,16 @@ span.sandBgElement img.swirl {
   }
   75% {
     rotate: -90deg;
+  }
+}
+@-webkit-keyframes orbit {
+  100% {
+    rotate: 360deg;
+  }
+}
+@keyframes orbit {
+  100% {
+    rotate: 360deg;
   }
 }
 a:link,
@@ -874,7 +1036,7 @@ nav > * {
 }
 @media screen and (min-width: 1100px) {
   nav > * {
-    font-size: 1.1em;
+    font-size: 1em;
   }
 }
 h1,
@@ -891,7 +1053,8 @@ h6 {
 p {
   color: #e6d2bf;
 }
-.white {
+.white,
+.active {
   color: #fff;
 }
 h1 {
@@ -931,7 +1094,7 @@ h6 {
 p,
 li {
   font-weight: 400;
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 140%;
 }
 .small {
@@ -959,6 +1122,48 @@ strong {
 .fw-800 {
   font-weight: 800;
 }
+a.tabLink {
+  text-decoration: none;
+}
+a.tabLink > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-bottom: 1px solid #95a2b4;
+  padding: 0.5em 0;
+  margin-bottom: 0;
+}
+a.tabLink > *.active {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+a.tabLink i {
+  font-size: 90%;
+  color: #95a2b4;
+}
+ul.linedItems {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+ul.linedItems li {
+  display: block;
+  text-align: center;
+  padding: 1em;
+  border-bottom: 1px solid #b2a8a1;
+}
+ul.linedItems li:last-child {
+  border-bottom: none;
+}
+.panel p {
+  margin: 0;
+  margin-bottom: 0.8vw;
+}
 /* effects */
 .multiply {
   background-blend-mode: multiply;
@@ -968,6 +1173,10 @@ strong {
 }
 .burnColor {
   background-blend-mode: color-burn;
+}
+.gradientDarkEnvron {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(25%, rgba(0,0,0,0)), color-stop(25%, rgba(0,0,0,0.35)), to(rgba(0,0,0,0)));
+  background: linear-gradient(to top, rgba(0,0,0,0) 25%, rgba(0,0,0,0.35) 25%, rgba(0,0,0,0));
 }
 .gradient3 {
   background-blend-mode: multiply;

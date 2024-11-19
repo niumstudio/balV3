@@ -183,7 +183,7 @@
         fade: true,
         pauseOnHover: false,
         autoplay: true,
-        autoplaySpeed:6000,  
+        autoplaySpeed:5500,  
         speed: 1000,      
         dots: true,
         arrows: false
@@ -195,9 +195,9 @@
             //
         },
         entered: function(direction) {
-            $('.positionObj1').delay(500).animate({opacity: 1.0}, {queue : true, duration:1000});
-            $('.positionObj2').delay(700).animate({opacity: 1.0}, {queue : true, duration:1000});
-            $('.positionObj3').delay(1200).animate({opacity: 1.0}, {queue : true, duration:1000});
+            $('.positionObj1').delay(500).animate({opacity: 0.9}, {queue : true, duration:1000});
+            $('.positionObj2').delay(700).animate({opacity: 0.9}, {queue : true, duration:1000});
+            $('.positionObj3').delay(1200).animate({opacity: 0.9}, {queue : true, duration:1000});
         },
         exit: function(direction) {
             //

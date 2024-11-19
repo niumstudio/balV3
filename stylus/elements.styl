@@ -74,7 +74,7 @@ a.ctaButton:hover
 
 a.minorCTA 
     font-size: 1.2em
-    padding: padXXS padXXS*1.5
+    padding: padXXS 0
     display: inline-block
     text-decoration: none
     transition: 0.5s
@@ -142,12 +142,12 @@ ul.vanilla li
 .simpleGrid
     display: grid
     grid-template-columns: repeat(auto-fit, minmax(40%,1fr))
-    grid-column-gap: 1em
-    grid-row-gap: 1em
+    grid-column-gap: padXS
+    grid-row-gap: padXS
 
 .simpleGrid2
     display: grid
-    grid-template-columns: repeat(auto-fit, minmax(15%,1fr))
+    grid-template-columns: repeat(auto-fill, minmax(15%,1fr))
     grid-column-gap: 1em
     grid-row-gap: 1em
 
@@ -186,7 +186,7 @@ ul.vanilla li
 }
 
 
-div.panel
+.panel, .panelled
     padding: padM
     background-color: blackAlp25
     border-radius: 8px
@@ -194,24 +194,18 @@ div.panel
     @media phoneRule
         margin-bottom: 1em
         padding: padL
-div.panel.compact
+.panel.rev, .panelled.rev
     background-color: whiteAlp04
+.panel.compact
     padding: padXS padM padXXS padM
-div.panel.noBG
+.panel.noBG,
+.panelled.noBG
     background: none
+.panel.centered,
+.panelled.centered
+    text-align: center
 
 
-.panel .thumb 
-    height: 5vw
-    display: flex
-    align-items: center
-    padding: padXS
-    margin: marXS
-    background-position: center
-    background-repeat: no-repeat
-    background-size: contain
-    @media phoneRule
-        height: 15vw
 
 
 .panel .thumb.larger 
@@ -297,8 +291,8 @@ span.sandBgElement img.swirl
 .positionObj3
     position: absolute
     opacity:0.1
-    left: 30vw
-    bottom: -10vh
+    left: 35vw
+    top: 52vh
     
 .sandBgElement img.stone1
     width:60%
@@ -320,3 +314,101 @@ span.sandBgElement img.swirl
 
 .button-shake
     animation: button-shake 10s infinite ease-in;
+
+@keyframes orbit
+    100%
+        rotate: (360deg)
+
+.orbit
+    animation: orbit 30s infinite linear;
+
+
+
+
+
+
+
+
+
+
+/* svg zen waves */
+.waves
+    position:relative;
+    width: 100%;
+    height:15vh;
+    margin-bottom:-7px; /*Fix for safari gap*/
+    min-height:100px;
+    max-height:150px;
+
+    .parallax > use {
+    animation: move-forever 20s cubic-bezier(.55,.5,.45,.5)     infinite;
+    }
+    .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 15s;
+    }
+    .parallax > use:nth-child(2) {
+    animation-delay: -2s;
+    animation-duration: 20s;
+    }
+    .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+    }
+    .parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+    }
+    @keyframes move-forever {
+    0% {
+    transform: translate3d(-90px,0,0);
+    }
+    100% { 
+        transform: translate3d(85px,0,0);
+    }
+    }
+
+
+
+
+
+    /* video thumbs */
+
+a.itemLink:link, a.itemLink:visited  
+    transition: 0.3s
+    color: sandDark
+    display: block
+    text-decoration: none
+a.itemLink:hover > *
+    color: sand
+@media (pointer: fine)
+    a.itemLink:hover
+        transform: scale(102%)
+        //transform: translateY(-5px)
+        
+
+
+a.itemLink span.thumbVid
+    display: flex
+    justify-content: center
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    height:18vw
+    border-radius: 8px
+    @media phoneRule
+        height: 50vw
+        margin-bottom: marL
+    @media tabletRule
+        height: 25vw
+        margin-bottom: marM
+
+
+
+
+a.itemLink span i 
+    font-size:4em
+    color: sandDark
+    align-self: center
+a.itemLink:hover span i 
+    color: sand

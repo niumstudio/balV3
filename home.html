@@ -134,12 +134,30 @@
         <div id="inpageNav"></div>
 
 
-
-        <div class="positionSliderBG picturefill-background fullH vault" style="mix-blend-mode: multiply;z-index: 0;opacity: 0.0;">
+        <!-- hidden vault -->
+        <div class="positionSliderBG picturefill-background fullH vault" style="mix-blend-mode: overlay;z-index: 0;opacity: 0.0;">
             <div>&nbsp;</div>
             <span data-src="/images/misc/vault.webp" data-media="(min-width: 1100px)"></span> 
         </div>
 
+        <!-- orbiting stones -->
+        <div class="positionSliderBG2" style="overflow: hidden;mix-blend-mode: hard-light;">
+            <div class="orbit" style="
+            width:120vw; 
+            height:120vw; 
+            z-index: 0; 
+            background-image: url(/images/misc/stones-orbit.webp);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            opacity: 0.75;
+            position: absolute;
+            top:-32vw;
+            left:-10vw">
+                <div>&nbsp;</div>
+            </div>
+        </div>
+        
 
 
         <!-- base level sand swirls -->
@@ -314,17 +332,29 @@
                     <div class="simpleGrid30">
                         <div class="panel">
                             <h4>100% Boosted Pools</h4>
-                            <p>Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et. Ipsum quis elit irure Lorem voluptate quis cupidatat minim esse. Reprehenderit sint id aliqua occaecat fugiat labore excepteur commodo nulla nulla pariatur ad commodo deserunt.</p>
+                            <p>Balancer v3 introduces 100% Boosted Pools, enhancing capital efficiency for passive LPs.</p>
+                            <p>These pools deposit idle liquidity in trusted platforms like Aave, providing LPs exposure to an additional layer of sustainable yield. Unlike v2, v3 registers yield-bearing tokens directly with the pool, using Buffers to facilitate gas-efficient swaps.</p>
+                            <p>Buffers act as simple two-token liquidity pools that hold a yield bearing token (waUSDC) and it's underlying counterpart (USDC), minimizing external calls and providing LPs with full yield exposure while optimizing gas usage.</p>
+
+                            <a href="https://docs-v3.balancer.fi/concepts/explore-available-balancer-pools/boosted-pool.html#advantages-of-boosted-pools" class="minorCTA" target="_blank"><span>Explore in docs</span>&nbsp;<i class="icon-arrow-up-right"></i></a><br>
                         </div>
                         <div class="panel">
-                            <h4>Custom Pools &amp; Hooks</h4>
-                            <p>Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et. Ipsum quis elit irure Lorem voluptate quis cupidatat minim esse.</p>
-                            <p>Ipsum quis elit irure Lorem voluptate quis cupidatat minim esse.</p>
+                            <h4>Custom Pools &amp; Reusable Hooks</h4>
+                            <p>Balancer v3 is a platform for AMM experimentation and innovation, allowing custom pools to iterate on existing or define entirely new swap invariants. With the v3 vault handling much of the responsibility that was previously delegated to the pool contract, internally developed pools are significantly less complex. By shifting core design patterns out of the pool and into the vault, v3 produces a 10x improvement in pool developer experience.</p>
+
+                            <p>Additionally, v3 introduces a hooks framework that allows developers to easily extend existing pool types at various key points throughout the pool's lifecycle, unlocking an infinite design space.</p>
+                            <a href="https://docs-v3.balancer.fi/concepts/core-concepts/hooks.html" class="minorCTA" target="_blank"><span>Explore in docs</span>&nbsp;<i class="icon-arrow-up-right"></i></a><br>
                         </div>
                         <div class="panel">
-                            <h4>LVR Mitigation</h4>
-                            <p>Reprehenderit sint id aliqua occaecat fugiat labore excepteur commodo nulla nulla pariatur ad commodo deserunt.</p>
-                            <p>Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et. Ipsum quis elit irure Lorem voluptate quis cupidatat minim esse.</p>
+                            <h4>LVR/MEV Mitigation</h4>
+                            <p>Balancer v3 focuses on minimizing MEV and maximizing LP profitability by collaborating with intent-centric projects like CowSwap.</p> 
+                            <br>
+                            <img src="/images/misc/CoW-Bal.webp" style="max-width: 230px; margin: 0px auto;">
+                            <p>v3 leverages custom AMM logic and a hooks framework to enable third-party teams easily to develop MEV mitigation strategies.</p>
+                            <p>Supported by Balancer DAO, this approach aims to help bolster MEV innovation for LPs, enhancing fairness and profitability in on-chain interactions for the future to come.</p>
+
+                            <a href="https://docs-v3.balancer.fi/" class="minorCTA" target="_blank"><span>Explore in docs</span>&nbsp;<i class="icon-arrow-up-right"></i></a><br>
+                            
                         </div>
                     </div>
 
@@ -338,48 +368,60 @@
                         </div>
 
                         <div class="simpleGrid30 slideOutDrawer">
-                            <div class="panel compact">
-                                <h6>Sub-feature title</h6>
-                                <p>Minor copy. Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et.</p>
+                            <div class="panel compact rev">
+                                <h6>Simplified AMM Deployment</h6>
+                                <p>Remove low-level tasks. Supply custom AMM logic, and harness the full benefit of an optimised tech stack.</p>
+                            </div>                           
+                            <div class="panel compact rev">
+                                <h6>Decimal Scaling</h6>
+                                <p>To alleviate the challenges of managing tokens with variable decimals, the vault provides the pool with token balances and input values scaled to 18 decimals.</p>
+                            </div> 
+                            <div class="panel compact rev">
+                                <h6>Rate Scaling</h6>
+                                <p>v3 abstracts the complexity of managing LSTs by moving all rate scaling into the vault, providing pools with uniform rate-scaled balances and input values by default, ensuring that yield from yield-bearing tokens is not captured by arbitrage traders.</p>
                             </div>
-                            <div class="panel compact">
-                                <h6>Sub-feature title</h6>
-                                <p>Minor copy. Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et.</p>
+                            <div class="panel compact rev">
+                                <h6>Liquidity Invariant Approximation</h6>
+                                <p>Supports unbalanced add/remove liquidity operations across all pool types, dramatically enhancing user experience, as users are not forced to add liquidity in proportional amounts.</p>
                             </div>
-                            <div class="panel compact">
-                                <h6>Sub-feature title</h6>
-                                <p>Minor copy. Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et.</p>
+                            <div class="panel compact rev">
+                                <h6>Transient Accounting</h6>
+                                <p>EIP-1153's transient op-codes unlock a new, expressive design, the “Till” pattern. This allows the vault to efficiently enforce contract-level invariants in the scope of a callback, supporting design patterns that were previously not possible.</p>
                             </div>
-                            <div class="panel compact">
-                                <h6>Sub-feature title</h6>
-                                <p>Minor copy. Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et.</p>
+                            <div class="panel compact rev">
+                                <h6>ERC20MultiToken</h6>
+                                <p>Ensures atomic updates to pool token balances and total supply within the vault, reducing risks of read-only reentrancy attack vectors.</p>
                             </div>
-                            <div class="panel compact">
-                                <h6>Sub-feature title</h6>
-                                <p>Minor copy. Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et.</p>
+                            <div class="panel compact rev">
+                                <h6>Swap Fee Management</h6>
+                                <p>Standardizes swap fee implementation within the vault for consistent interfaces across pools, while allowing flexibility at the hook level.</p>
                             </div>
-                            <div class="panel compact">
-                                <h6>Sub-feature title</h6>
-                                <p>Minor copy. Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et.</p>
+                            <div class="panel compact rev">
+                                <h6>Pool Creator Fee</h6>
+                                <p>Introduces a permissionless mechanism for external pool developers to earn a share of swap fees and yield, incentivizing innovative AMM creation.</p>
                             </div>
-                            <div class="panel compact">
-                                <h6>Sub-feature title</h6>
-                                <p>Minor copy. Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et.</p>
-                            </div>
-                            <div class="panel compact">
-                                <h6>Sub-feature title</h6>
-                                <p>Minor copy. Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et.</p>
-                            </div>
-                            <div class="panel compact">
-                                <h6>Sub-feature title</h6>
-                                <p>Minor copy. Velit mollit reprehenderit aliqua esse velit velit aliqua eiusmod quis et.</p>
+                            <div class="panel compact rev">
+                                <h6>Pool Pause Manager</h6>
+                                <p>The pool can define its pause window on registration, relying on the vault to enforce the time window and manage authentication.</p>
                             </div>
                         </div>
 
                     </div>
 
-                   
                     
+
+                    
+                    
+                    
+                    
+
+
+
+
+
+
+
+
 
                 </div>
 
@@ -407,8 +449,8 @@
                     <div class="insetContent vaultTrigger">
                      
 
-                        <h3>Building on Balancer has never been easier...</h3>
-                        <p>The V3 Vault has been redesigned to ...  reprehenderit aliqua esse velit velit aliqua eiusmod quis et. And <strong>audited by the best-</strong> [name], [name] amd [name.].</p>
+                        <h3>Building on Balancer has never been easier</h3>
+                        <p><strong>The optmized vault.</strong> Repeated custom pool design patterns are shifted into the vault, ensuring consistency across all pools and removing sources of significant complexity from the pool contract.</p>
                         <h3>...and more robust.</h3>
                         <br>
                         <a href="/" class="ctaButton">Learn more about the V3 Vault</a>
@@ -428,102 +470,266 @@
 
 
 
+
+
+
+
             <div class="filled" id="s2">
-                <div class="outerWrapper">
+                <div class="outerWrapper wider noPadBottom gradientDarkEnvron">
                     
                     <div class="innerContent centred">
                         <div class="insetContent vaultTrigger">
-                            <h2>The V3 System Design</h2>
-                            <p>eprehenderit aliqua esse velit velit aliqua eiusmod quis et</p>
+                            <h2>The V3 Concept</h2>
+                            <p>The system design for Balancer V3 delivers the best of both worlds. A sense of experimentation and creativity for developers while maintaining security, reliability and trust for users.</p>
+                            <br><br>
                         </div> 
                     </div>
 
                     <div class="innerContent">
-                            the diagram
+                        <div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <!-- To add - Items &amp; descriptions - and layers of below on delayed reveal -->
+                        </div>
+                        <img src="/images/misc/core-concept-base.webp">
+                        <div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <!-- To add - Actions 1-5 on delayed reveal--> 
+                        </div>
                     </div>
     
                 </div>
             </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div class="filled">
-                <div class="outerWrapper">
-                        
-                    <div class="innerContent ">
-                            <section>
-                                <h1>Title<br>eiusmod est velit temp</h1>
-                                <h2>SubTitle<br>eiusmod est velit temp</h2>
-                                <h3>Heading1<br>eiusmod est velit temp</h3>
-                                <h4>Heading2<br>eiusmod est velit temp</h4>
+                <div class="outerWrapper noPadBottom">
+                    
+                    <div class="innerContent cols">
+                            <section class="panelled noBG rev">
                                 
+                                <h4>Code less with V3</h4>
+                                
+                                <a href="#" class="tabLink"><h5 class="active">Building is simpler<span><i class="icon-chevron-right"></i></span></h5></a>
+                                <p>To make custom pool creation easy, core functions have been moved from pools into the heavily audited vault. For example, here's all the code needed to build a swap function for a Constant Product Pool.</p>
+
+                                <a href="#" class="tabLink"><h5>Build more<span><i class="icon-chevron-down"></i></span></h5></a>
+
+                                <a href="#" class="tabLink"><h5>Launch faster with less risk<span><i class="icon-chevron-down"></i></span></h5></a>
+                             
                             </section> 
-                            <section>
-                                
-                                <h5>Minor1 <br>eiusmod est velit temp</h5>
-                                <h6>Minor2 <br>eiusmod est velit temp</h6>
-                                <p>Voluptate eiusmod est velit tempor. Magna occaecat minim commodo pariatur sint. Do occaecat officia quis tempor aliquip officia in tempor in consequat. Ipsum voluptate sint mollit aliquip. Esse ullamco cupidatat incididunt nisi et adipisicing pariatur ad culpa. Nulla ullamco tempor voluptate adipisicing et voluptate occaecat aute officia qui aliqua eu qui.</p>
+                            <section class="panelled rev">
+                                <div >
+<pre class="syntax-highlighter" style="color: rgb(212, 212, 212); font-size: 14px; text-shadow: none; font-family: Menlo, Monaco, Consolas, 'Andale Mono', 'Ubuntu Mono', 'Courier New', monospace; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; line-height: 1.5; tab-size: 4; hyphens: none; padding: 16px; margin: 0px; overflow: auto; background: rgb(30, 30, 30); border-radius: 0px 0px 8px 8px;"><code style="font-size: 14px; white-space: pre;"><span>
+</span><span></span><span class="token" style="color: rgb(86, 156, 214);">function</span><span> </span><span class="token" style="color: rgb(220, 220, 170);">onSwap</span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>PoolSwapParams </span><span class="token" style="color: rgb(86, 156, 214);">calldata</span><span> params</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span>
+</span><span>  </span><span class="token" style="color: rgb(86, 156, 214);">external</span><span>
+</span><span>  </span><span class="token" style="color: rgb(86, 156, 214);">pure</span><span>
+</span><span>  </span><span class="token" style="color: rgb(86, 156, 214);">returns</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">(</span><span class="token" style="color: rgb(206, 145, 120);">uint256</span><span> amountCalculatedScaled18</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> 
+</span><span></span><span class="token" style="color: rgb(212, 212, 212);">{</span><span>
+</span><span>    </span><span class="token" style="color: rgb(206, 145, 120);">uint256</span><span> poolBalancetokenOut </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span> 
+</span><span>      params</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>balancesScaled18</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>params</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>indexOut</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// Y</span><span>
+</span><span>    </span><span class="token" style="color: rgb(206, 145, 120);">uint256</span><span> poolBalancetokenIn </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span>
+</span><span>      params</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>balancesScaled18</span><span class="token" style="color: rgb(212, 212, 212);">[</span><span>params</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>indexIn</span><span class="token" style="color: rgb(212, 212, 212);">]</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// X</span><span>
+</span><span>    </span><span class="token" style="color: rgb(206, 145, 120);">uint256</span><span> amountTokenIn </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span>
+</span><span>      params</span><span class="token" style="color: rgb(212, 212, 212);">.</span><span>amountGivenScaled18</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// dx</span><span>
+</span>
+<span>    amountCalculatedScaled18 </span><span class="token" style="color: rgb(212, 212, 212);">=</span><span>
+</span><span>      </span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>poolBalancetokenOut </span><span class="token" style="color: rgb(212, 212, 212);">*</span><span> amountTokenIn</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span> </span><span class="token" style="color: rgb(212, 212, 212);">/</span><span>
+</span><span>      </span><span class="token" style="color: rgb(212, 212, 212);">(</span><span>poolBalancetokenIn </span><span class="token" style="color: rgb(212, 212, 212);">+</span><span> amountTokenIn</span><span class="token" style="color: rgb(212, 212, 212);">)</span><span class="token" style="color: rgb(212, 212, 212);">;</span><span> </span><span class="token" style="color: rgb(106, 153, 85);">// dy</span><span>
+</span><span></span><span class="token" style="color: rgb(212, 212, 212);">}</span></code>
+&nbsp;</pre>     
+                                </div> 
+                            </section> 
+        
+                    </div>       
+                </div>
+            </div>    
+            
+
+            
+
+
+
+
+
+
+
+            <div class="filled" id="s3">
+                <div class="outerWrapper noPadBottom">
+                    <div class="innerContent centred">
+                        <div class="insetContent">
+                            <h2>Compare V3</h2>
+                            <p>Idea here is to use V3 hero attributes alongside corresponding / alternative / inferior attributes of the other products.</p>
+                            <br>
+                        </div> 
+                    </div>
+                    <div class="innerContent cols compact"> 
+                            <section class="panelled rev" style="margin-top: 2em;margin-bottom: 2em;">
+                                <h5 class="centred">Balancer V2</h5>
+                                <ul class="linedItems">
+                                    <li>Comparitive item 1</li>
+                                    <li>Comparitive item 2</li>
+                                    <li>Comparitive item 3</li>
+                                    <li>Comparitive item 4</li>
+                                    <li>Comparitive item 5</li>
+
+                                </ul>
+                            </section> 
+                            <section class="panelled">
+                                <h4 class="sand centred fw-600">Balancer V3</h4>
+                                <ul class="linedItems">
+                                    <li>Hero item 1</li>
+                                    <li>Hero item 2</li>
+                                    <li>Hero item 3</li>
+                                    <li>Hero item 4</li>
+                                    <li>Hero item 5</li>
+                                </ul>
+                            </section> 
+                            <section class="panelled rev" style="margin-top: 2em;margin-bottom: 2em;">
+                                <h5 class="centred">Uniswap V4</h5>
+                                <ul class="linedItems">
+                                    <li>Comparitive item 1</li>
+                                    <li>Comparitive item 2</li>
+                                    <li>Comparitive item 3</li>
+                                    <li>Comparitive item 4</li>
+                                    <li>Comparitive item 5</li>
+                                </ul>
                             </section> 
         
                     </div>
+                   
         
                 </div>
-           
+          
+
+        </div>
 
 
-        <style>
-            /* Animation */
-            .waves {
-                position:relative;
-                width: 100%;
-                height:15vh;
-                margin-bottom:-7px; /*Fix for safari gap*/
-                min-height:100px;
-                max-height:150px;
-                }
-                .parallax > use {
-                animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
-                }
-                .parallax > use:nth-child(1) {
-                animation-delay: -2s;
-                animation-duration: 15s;
-                }
-                .parallax > use:nth-child(2) {
-                animation-delay: -2s;
-                animation-duration: 20s;
-                }
-                .parallax > use:nth-child(3) {
-                animation-delay: -4s;
-                animation-duration: 13s;
-                }
-                .parallax > use:nth-child(4) {
-                animation-delay: -5s;
-                animation-duration: 20s;
-                }
-                @keyframes move-forever {
-                0% {
-                transform: translate3d(-90px,0,0);
-                }
-                100% { 
-                    transform: translate3d(85px,0,0);
-                }
-                }
-        </style>
 
 
-            <div style=" clip-path: rect(0px 100% 15vh 0px);overflow: hidden;">
-                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                <defs>
-                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                </defs>
-                <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.02" />
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.02" />
-                </g>
-                </svg>
+
+
+
+        <div class="filled">
+            <div class="outerWrapper noPadBottom">
+                <div class="innerContent centred">
+                    <div class="insetContent">
+                        <h2>Feel the flow</h2>
+                        <p>Rest assured and begin building the future knowing Balancer V3 has been rigously audited by these best in class organizations.</p>
+                        <br>
+                    </div> 
+                </div>
+                <div class="innerContent centred">
+                    <img src="/images/misc/Trail-of-Bits.svg" style="height:65px;width:auto;display: inline-block; margin: 0px 3vw;">
+                    <img src="/images/misc/spearbit_wordmark_white.png" style="height:65px;width:auto;display: inline-block;margin: 0px 3vw;">
+                    <img src="/images/misc/Certora_Logo_White_Medium.png" style="height:65px;width:auto;display: inline-block;margin: 0px 3vw;">
+                </div>
+                
+               
+    
             </div>
+      
+
+        <!-- svg waves at base of div-->
+        <div style="clip-path: rect(0px 100% 15vh 0px);overflow: hidden;">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.02" />
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.02" />
+            </g>
+            </svg>
+        </div>
+
+    </div>
 
 
 
+        <div class="filled" id="s4">
+            <div class="outerWrapper whitebgAlp04">
+                <div class="innerContent centred">
+                    <div class="insetContent">
+                        <h2>Flex your zen and start building.</h2>
+                        <p>The best place to start is by watching the video walkthrough series below. Then dig into the docs, create your own V3 prototype OR join us in the Balancer discord for support- or at one of our many community live events!</p>
+                        <br>
+                        <h4>V3 Video Walkthroughs</h4>
+                    </div> 
+                </div>
+                <div class="innerContent">        
+                    <div class="simpleGrid">
+                        <div class="panel compact centered rev">
+                            <a href="https://youtu.be/oJAXQCMVdfA" data-fslightbox="V3 Walkthroughs" class="itemLink">
+                                <span class="thumbVid" style="background-image: url(/images/misc/vid-thumb-amm.webp);">
+                                    <i class="icon-play"></i>
+                                </span>
+                            </a>
+                            <br>
+                            <h6>Create Custom AMMs on V3</h6>
+                        </div>
+                        <div class="panel compact centered rev">
+                            <a href="https://youtu.be/pO1ChmSFTaY" data-fslightbox="V3 Walkthroughs" class="itemLink">
+                                <span class="thumbVid" style="background-image: url(/images/misc/vid-thumb-router.webp);">
+                                    <i class="icon-play"></i>
+                                </span>
+                            </a>
+                            <br>
+                            <h6>Create a Router on V3</h6>
+                        </div>
+                        <div class="panel compact centered rev">
+                            <a href="https://youtu.be/kaz6duliRPA" data-fslightbox="V3 Walkthroughs" class="itemLink">
+                                <span class="thumbVid" style="background-image: url(/images/misc/vid-thumb-hook.webp);">
+                                    <i class="icon-play"></i>
+                                </span>
+                            </a>
+                            <br>
+                            <h6>Create a Hook on V3</h6>
+                        </div>
+                        <div class="panel compact centered rev">
+                            <a href="https://youtu.be/m6q5M34ZdXw" data-fslightbox="V3 Walkthroughs" class="itemLink">
+                                <span class="thumbVid" style="background-image: url(/images/misc/vid-thumb-scaffold.webp);">
+                                    <i class="icon-play"></i>
+                                </span>
+                            </a>
+                            <br>
+                            <h6>Introduction to Scaffold on V3</h6>
+                        </div> 
+                    </div>
+                </div>
+
+                <br>
+                <br>
+                <br>
+                <div class="innerContent centred">
+                    <a href="" class="ctaButton">V3 Docs</a>
+                    <a href="" class="ctaButton">Prototype on V3</a>
+                    <a href="" class="ctaButton">Join the Balancer Discord</a>
+                </div>
+
+            </div>
         </div>
 
 
@@ -534,20 +740,80 @@
 
 
 
-        <div class="filled">
-            <div class="outerWrapper whitebgAlp04">
-                
-                <div class="innerContent">
-                    <section>
-                        <h4>Column one</h4>
-                    </section> 
-                    <section>
-                        <h4>Column two</h4>
-                    </section> 
-                    <section>
-                        <h4>Column three</h4>
-                    </section> 
 
+        <div class="filled">
+            <div class="whitebgAlp04" style=" min-height: 55vh; position: relative; display: flex; justify-content: center;">
+                <div style="
+                    background-size: cover;
+                    mix-blend-mode: overlay;
+                    background-position: center;
+                    background-image: url(/images/misc/zen-inspo.webp); position: absolute; width: 100%; height: 100%;">
+                </div>
+                <div style="
+                width:20vw; padding:5vw;">
+                    <img src="/images/zen-Circle@2x.webp" class="orbit">
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="filled">
+            <div class="outerWrapper  whitebgAlp04">
+                <div class="innerContent centred">
+                    <div class="insetContent">
+                        <h2>You bring the energy. We bring the funding.</h2>
+                        <p><strong>Innovation is rewarded.</strong> Balancer Community Grants aim to accelerate the development of the Balancer ecosystem. Grants for innovation on Balancer v3 will be prioritized. This program is managed by the Balancer Grants DAO, an independent community-owned grants program for the Balancer ecosystem.</p>
+                        <br>
+                        <h4>Grants are available in these areas:</h4>
+                    </div> 
+                </div>
+                <div class="innerContent">        
+                    <div class="simpleGrid3">
+                        <div class="panel compact rev">
+                            <p>A grant topic / subject</p>
+                        </div>
+                        <div class="panel compact rev">
+                            <p>A grant topic / subject</p>
+                        </div>
+                        <div class="panel compact rev">
+                            <p>A grant topic / subject</p>
+                        </div>
+                        <div class="panel compact rev">
+                            <p>A grant topic / subject</p>
+                        </div>
+                        <div class="panel compact rev">
+                            <p>A grant topic / subject</p>
+                        </div>
+                        <div class="panel compact rev">
+                            <p>A grant topic / subject</p>
+                        </div>
+                        <div class="panel compact rev">
+                            <p>A grant topic / subject</p>
+                        </div>
+                        <div class="panel compact rev">
+                            <p>A grant topic / subject</p>
+                        </div>
+                        <div class="panel compact rev">
+                            <p>A grant topic / subject</p>
+                        </div>
+                        <div class="panel compact rev">
+                            <p>A grant topic / subject</p>
+                        </div>
+                       
+                        
+                    </div>
+                </div>
+
+                <br>
+                <br>
+                <br>
+                <div class="innerContent centred">
+                    <a href="https://grants.balancer.community/" class="ctaButton">Visit Balancer Grants</a>
                 </div>
 
             </div>
@@ -581,7 +847,7 @@
 
 
 
-    <footer>  
+    <footer class="filled">  
 
         <div>Standard Balancer.fi Footer</div>
       

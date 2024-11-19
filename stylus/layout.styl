@@ -25,7 +25,6 @@
 
     body > footer
         color: white
-        background: blackAlp25
         text-align: center
         padding:  padXL marXL padXL marXL
 
@@ -190,6 +189,22 @@ div.outerWrapper
     padding: padXL*2 padXL*2
     @media tabletRule
         padding: padXL*2 padXL
+div.outerWrapper.wider
+    padding-left: padXL
+    padding-right: padXL
+div.innerContent.cols
+    @media dtrigger
+        display: flex
+        flex-wrap: nowrap
+        column-gap: padM
+div.innerContent.cols.compact
+    @media dtrigger
+        column-gap: padXXS
+div.innerContent.cols > section
+    @media phoneRule
+        margin-bottom: 10vh
+    @media dtrigger
+        flex: 1 1 50%
 // large desktop
 @media lgdesktopRule
     div.outerWrapper
@@ -200,8 +215,6 @@ div.outerWrapper
 
 
 
-
-// masthead
 .positionSliderBG
     //position: absolute
     position: fixed
@@ -210,6 +223,11 @@ div.outerWrapper
     z-index: 0
     @media mtrigger
         height: 100% - navHeight
+.positionSliderBG2
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 0
 .container 
     position: relative
 .centred 
@@ -225,7 +243,7 @@ div.insetContent
     background-position: 50% 50%
     padding: padXXS
     @media dtrigger
-        width 50vw
+        width 40vw
 
 div.slickSliderContent div.insetContent
     display: flex
