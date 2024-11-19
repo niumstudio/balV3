@@ -832,7 +832,7 @@ span.sandBgElement img.swirl {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
   filter: alpha(opacity=10);
   left: 35vw;
-  top: 52vh;
+  top: 50vh;
 }
 .sandBgElement img.stone1 {
   width: 60%;
